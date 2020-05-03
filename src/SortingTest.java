@@ -25,6 +25,7 @@ public class SortingTest {
 
     @Test
     public void quickSortUnitTest() {
+        System.out.println("Test QuickSort\n");
         List<int[]> copy1 = new ArrayList<>(list);
 
         QuickSort s = new QuickSort();
@@ -40,8 +41,37 @@ public class SortingTest {
 
     @Test
     public void bubbleSortUnitTest() {
+        System.out.println("Test BubbleSort\n");
+        List<int[]> copy1 = new ArrayList<>(list);
 
+        BubbleSort s = new BubbleSort();
+        for (int i = 0; i < copy1.size(); i++) {
+            System.out.println("Unsorted array number " + (i + 1) + ": " + Arrays.toString(copy1.get(i)));
+            s.sort(copy1.get(i));
+            Arrays.sort(list.get(i));
+            assertEquals(copy1.get(i), list.get(i));
+            System.out.println("Sorted array number " + (i + 1) + ": " + Arrays.toString(copy1.get(i)));
+            System.out.println("Array number " + (i + 1) + " is correct\n");
+        }
     }
+
+    @Test
+    public void mergeSortUnitTest() {
+        System.out.println("Test MergeSort\n");
+        List<int[]> copy1 = new ArrayList<>(list);
+
+        MergeSort s = new MergeSort();
+        for (int i = 0; i < copy1.size(); i++) {
+            System.out.println("Unsorted array number " + (i + 1) + ": " + Arrays.toString(copy1.get(i)));
+            s.sort(copy1.get(i));
+            Arrays.sort(list.get(i));
+            assertEquals(copy1.get(i), list.get(i));
+            System.out.println("Sorted array number " + (i + 1) + ": " + Arrays.toString(copy1.get(i)));
+            System.out.println("Array number " + (i + 1) + " is correct\n");
+        }
+    }
+
+
 
 
     /**
